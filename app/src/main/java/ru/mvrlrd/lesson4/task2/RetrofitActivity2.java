@@ -16,7 +16,7 @@ import ru.mvrlrd.lesson4.R;
 // Использовать библиотеку retorift.
 public class RetrofitActivity2 extends AppCompatActivity {
 @BindView(R.id.imageView)
-    private ImageView imageView;
+    protected ImageView imageView;
     private RetrofitPresenter retrofitPresenter;
 
     @Override
@@ -26,14 +26,14 @@ public class RetrofitActivity2 extends AppCompatActivity {
         ButterKnife.bind(this);
 
         retrofitPresenter = new RetrofitPresenter();
+        retrofitPresenter.getString();
     }
 
         @OnClick(R.id.button)
         public void onClickButton(){
-            retrofitPresenter.getString();
                  Picasso
                     .get()
-                    .load("https://avatars1.githubusercontent.com/u/43534266?v=4")
+                    .load(retrofitPresenter.getUrl())
                     .into(imageView);
     }
 

@@ -4,9 +4,15 @@ import com.google.gson.annotations.Expose;
 
 public class User {
     @Expose
-    String login;
+   private String login;
     @Expose
-    String avatar_url;
+   private String avatar_url;
 
+    public String getLogin() {
+        return login;
+    }
 
+    public String getAvatar_url() {
+        return avatar_url;
+    }
 }

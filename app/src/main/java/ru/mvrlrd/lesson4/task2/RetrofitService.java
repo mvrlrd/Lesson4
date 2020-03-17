@@ -7,5 +7,5 @@ import retrofit2.http.Path;
 public interface RetrofitService {
 
     @GET("/users/{user}")
-    Observable<User> getUser(@Path("user")String user);
+    Observable <User> getUser(@Path("user")String user);
 }

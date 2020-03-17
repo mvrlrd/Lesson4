@@ -17,14 +17,14 @@ public class RetrofitApi {
 
         GsonConverterFactory gsonConverterFactory = GsonConverterFactory.create(gson);
 
-        RetrofitService api = new Retrofit.Builder()
+        RetrofitService retrofitServiceApi = new Retrofit.Builder()
                 .baseUrl("https://api.github.com")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(gsonConverterFactory)
                 .build()
                 .create(RetrofitService.class);
 
-        return api.getUser("JakeWharton").subscribeOn(Schedulers.io());
+        return retrofitServiceApi.getUser("JakeWharton").subscribeOn(Schedulers.io());
 
     }
 }
