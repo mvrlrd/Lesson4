@@ -1,10 +1,9 @@
-package ru.mvrlrd.lesson4;
+package ru.mvrlrd.lesson4.task1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import ru.mvrlrd.lesson4.R;
 import android.os.Bundle;
 import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -14,23 +13,22 @@ import com.google.gson.GsonBuilder;
 // с помощью Gson.
 // Вывести в лог поля получившегося класса.
 
-//Создать RetrofitActivity.
-// В активити получить строчку с https://api.github.com/users/JakeWharton
-// и отобразить аватарку по avatar_url.
-// Использовать библиотеку retrofit.
 public class MainActivity extends AppCompatActivity {
-
+    MyCalendar myCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task1);
 
+        String json = "{\n"+
+                "\"time_of_year\": \"summer\",\n"+
+                "\"year\": 2019\n" +
+                "}";
         Gson gson = new GsonBuilder().create();
+        myCalendar = gson.fromJson(json,MyCalendar.class);
+        Log.d("TASK 1: ", myCalendar.season);
 
     }
 
-    public void onClick(){
-        Log.d()
     }
-}
