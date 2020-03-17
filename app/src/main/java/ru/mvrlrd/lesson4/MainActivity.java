@@ -3,6 +3,10 @@ package ru.mvrlrd.lesson4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 //Создать GsonActivity.
@@ -16,9 +20,17 @@ import android.os.Bundle;
 // Использовать библиотеку retrofit.
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Gson gson = new GsonBuilder().create();
+
+    }
+
+    public void onClick(){
+        Log.d()
     }
 }
